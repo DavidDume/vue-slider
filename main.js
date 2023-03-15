@@ -45,6 +45,9 @@ createApp({
             }
             this.activeImage--   
         }
+    },
+    mounted() {
+        setInterval(this.nextImg, 3000);
     }
 }).mount('#app')
     
