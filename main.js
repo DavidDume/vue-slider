@@ -43,8 +43,7 @@ createApp({
             if(this.activeImage == 0) {
                 this.activeImage = this.slides.length 
             }
-            this.activeImage--
-            
+            this.activeImage--   
         }
     }
 }).mount('#app')
