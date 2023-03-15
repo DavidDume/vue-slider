@@ -28,7 +28,23 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: 'Hello Vue!'
+            slides: slides,
+            activeImage: 0
+        }
+    },
+    methods: {
+        nextImg() {
+            this.activeImage++
+            if(this.activeImage >= this.slides.length) {
+                this.activeImage = 0
+            }
+        },
+        prevImg() {
+            if(this.activeImage == 0) {
+                this.activeImage = this.slides.length 
+            }
+            this.activeImage--
+            
         }
     }
 }).mount('#app')
