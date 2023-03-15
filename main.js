@@ -29,7 +29,8 @@ createApp({
     data() {
         return {
             slides: slides,
-            activeImage: 0
+            activeImage: 0,
+            interval: true
         }
     },
     methods: {
@@ -44,10 +45,16 @@ createApp({
                 this.activeImage = this.slides.length 
             }
             this.activeImage--   
+        },
+        startInterval() {
+             this.interval = setInterval(this.nextImg, 3000);
+        },
+        stopInterval() {
+            clearInterval(this.interval)
         }
     },
     mounted() {
-        setInterval(this.nextImg, 3000);
+        this.startInterval()
     }
 }).mount('#app')
     
